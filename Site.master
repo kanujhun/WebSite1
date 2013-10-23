@@ -1,0 +1,129 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title>Textbook</title>
+    <link href="~/Styles/headAndNav.css" rel="stylesheet" type="text/css" />
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+  	<script type="text/javascript">
+  	    $(document).ready(function () {
+  	        //advance search
+  	        $('#adv').click(function () {
+  	            $('#header').css('height', '430px');
+  	            $('#adv_box').show();
+  	        });
+  	        $('#adv_hide').click(function () {
+  	            $('#header').css('height', '145px');
+  	            $('#adv_box').hide();
+  	        });
+  	    });
+  	</script>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+<form runat="server">
+<div id="body">
+        <div id="header">
+            <div class="top">
+	            <div id="logo">
+		            <a href="Default.aspx"><img src="img/logo.png" alt="LOGO" /></a>
+	            </div>
+	            <div id="main_nav">
+		            <ul>
+			            <li><asp:hyperlink navigateurl="~/Upload.aspx" id="upload" text="Textbook" runat="server"/></li>
+			            <li><asp:LinkButton id="nw" onclick="getTitle" text="New Released Books" runat="server"/></li>
+			            <li class="last">
+					        <asp:LinkButton id="hot" onclick="getTitle" text="Today's Deals" runat="server"/>
+			            </li>
+		            </ul>
+                </div>
+           </div>
+	            <div id="srch">
+			            <label>Search</label>
+			            <asp:textbox runat="server" id="search" text="Put The Textbook's Title" />
+			            <asp:button runat="server" text="GO" id="srch_norm" OnClick="normSearch" />
+	            </div>
+                <div id="adv"><a href="#">Advance</a></div>
+	            <div id="adv_box">
+		            <h3>Advance Search (<span id="adv_hide">Hide</span>):</h3>
+                    <div class="box">
+			            <label>Title</label>
+			            <asp:textbox runat="server" id="title" maxlength="100"/>
+			            <label>Author(s)</label>
+			            <asp:textbox runat="server" id="author" maxlength="150"/>
+		                <label>ISBN</label>
+                        <asp:textbox runat="server" id="isbn" maxlength="10"/>
+			            <asp:button runat="server" text="search" id="adv_submit" OnClick="advSearch" />
+                   </div>
+	           </div>
+       </div>
+       
+       <div id="leftnav">
+		<ul>
+			<li class="big"><asp:LinkButton id="nw_nav" onclick="HeaderLocation" text="New Released Books" runat="server"/></li>
+			<li class="big"><asp:LinkButton id="hot_nav" onclick="getTitle" text="Today's Deals" runat="server"/></li>
+			<li class="big" id="lnav"><a href="#">Departments ></a><ul>
+				<li> 
+                    <asp:LinkButton onclick="department" id="d1" text="Arts & Photography" runat="server"/>
+				</li>
+				<li>
+					<asp:LinkButton onclick="department" id="d2" text="Business & Investing" runat="server"/>
+				</li>
+				<li>
+					<asp:LinkButton onclick="department" id="d3" text="Children's Books" runat="server"/>
+				</li>
+				<li>
+					<asp:LinkButton onclick="department" id="d4" text="Computer & Technology" runat="server"/>
+				</li>
+				<li>
+					<asp:LinkButton onclick="department" id="d5" text="Cookbooks & Foods" runat="server"/>
+				</li>
+				<li>
+					<asp:LinkButton onclick="department" id="d6" text="Home" runat="server"/>
+				</li>
+				<li>
+					<asp:LinkButton onclick="department" id="d7" text="Education" runat="server"/>
+				</li>
+				<li>
+					<asp:LinkButton onclick="department" id="d8" text="Health, Fitness & Dieting" runat="server"/>
+				</li>
+				<li>
+					<asp:LinkButton onclick="department" id="d9" text="History" runat="server"/>
+				</li>
+				<li>
+					<asp:LinkButton onclick="department" id="d10" text="Entertainment" runat="server"/>
+				</li>
+				<li>
+					<asp:LinkButton onclick="department" id="d11" text="Law" runat="server"/>
+				</li>
+				<li>
+					<asp:LinkButton onclick="department" id="d12" text="Fiction" runat="server"/>
+				</li>
+				<li>
+					<asp:LinkButton onclick="department" id="d13" text="Politics" runat="server"/>
+				</li>
+				<li>
+					<asp:LinkButton onclick="department" id="d14" text="Science & Math" runat="server"/>
+				</li>
+				<li>
+					<asp:LinkButton onclick="department" id="d15" text="Science Fiction & Fantasy" runat="server"/>
+				</li>
+				<li>
+					<asp:LinkButton onclick="department" id="d16" text="Travel" runat="server"/>
+				</li>
+				</ul>
+			</li>
+			<li class="big"><asp:hyperlink navigateurl="~/Upload.aspx" id="upload_nav" text="Upload Textbook" runat="server"/></li>
+		</ul>
+	</div>
+
+        <div id="container">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div>
+</div>
+</form>
+</body>
+</html>

@@ -1,0 +1,45 @@
+﻿/* RESET */
+html,body,div,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,pre,form,p,blockquote,fieldset,input,abbr,article,aside,command,details,figcaption,figure,footer,header,hgroup,mark,meter,nav,output,progress,section,summary,time { margin: 0; padding: 0; }
+h1,h2,h3,h4,h5,h6,pre,code,address,caption,cite,code,em,strong,th,figcaption { font-size: 1em; font-weight: normal; font-style: normal; }
+fieldset,iframe { border: none; }
+caption,th { text-align: left; }
+table { border-collapse: collapse; border-spacing: 0; }
+article,aside,footer,header,hgroup,nav,section,figure,figcaption { display: block; }
+
+/* TYPE */
+body { font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif; color: #333; -webkit-font-smoothing: antialiased; }
+
+a { color:#4169E1; text-decoration: none;}
+a:hover{ color:#FF6600;}
+a:visited, a:active {
+    border: none;
+    outline: none;
+}
+
+h1,h2,h3,h4,h5,h6,strong { color:#000; }
+h1,h2,h3,h4 { font-weight: bold; }
+h2,h3,h4 { line-height: 18px; }
+h1,h2 { margin-bottom: 18px; }
+h1 { font-size: 24px; line-height: 36px; }
+h2 { font-size: 16px; }
+h3 { font-size: 1em; }
+h4 { font-size: 10px; }
+p { margin-bottom: 18px; }
+
+ul { list-style: none outside; }
+
+/* LAYOUT */
+#body{
+	top:0;
+	left:0;
+	max-width: 1600px;
+	min-width: 1120px;
+}
+
+#container {
+	margin-left: 21%;
+	padding: 2em;
+}
+
+
+
